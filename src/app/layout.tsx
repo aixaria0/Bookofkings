@@ -1,14 +1,17 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
+const basePath = process.env.GITHUB_PAGES === "true" ? "/Bookofkings" : "";
+
 export const metadata: Metadata = {
   title: {
-    default: "Book of Kings · Your Daily Mirror",
+    default: "Book of Kings · The Private Codex",
     template: "%s · Book of Kings",
   },
-  description: "A daily ritual of reflection inspired by Persian storytelling.",
+  description:
+    "A private daily ritual inspired by Persian storytelling—three choices, one mirror, and a chronicle that stays yours.",
   applicationName: "Book of Kings",
-  manifest: "/manifest.webmanifest",
+  manifest: `${basePath}/manifest.webmanifest`,
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -20,19 +23,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Book of Kings",
-    title: "Book of Kings · Your Daily Mirror",
-    description: "A daily ritual of reflection inspired by Persian storytelling.",
+    title: "Book of Kings · The Private Codex",
+    description:
+      "A two-minute private ritual for the inner kingdom, inspired by Persian storytelling.",
   },
   twitter: {
     card: "summary",
-    title: "Book of Kings · Your Daily Mirror",
-    description: "A daily ritual of reflection inspired by Persian storytelling.",
+    title: "Book of Kings · The Private Codex",
+    description:
+      "A two-minute private ritual for the inner kingdom, inspired by Persian storytelling.",
   },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   viewportFit: "cover",
+  themeColor: "#05080d",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
